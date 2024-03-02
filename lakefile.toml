@@ -1,0 +1,11 @@
+name = "«lean4-views»"
+precompileModules = true
+defaultTargets = ["Views"]
+
+[[require]]
+name = "batteries"
+git = "https://github.com/leanprover-community/batteries"
+rev = "main"
+
+[[lean_lib]]
+name = "Views"
