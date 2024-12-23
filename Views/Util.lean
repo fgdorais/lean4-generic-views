@@ -1,11 +1,11 @@
 import Lean.Meta.Constructions
-import Batteries
+import Views.Basic
 
 namespace Lean
 open Meta
 
 def mkNewLevelName (u : Name := `u) (ls : List Name) : Name :=
-  bif ls.contains u then loop 0 ls.length else u
+  if ls.contains u then loop 0 ls.length else u
 where
   loop
     | i, fuel+1 =>
@@ -39,7 +39,7 @@ def StructureVal.toInductiveVal : StructureVal → InductiveVal
       ctors := [ctor]
       isUnsafe := isUnsafe
       isRec := false
-      isNested := false
+      numNested := 0
       isReflexive := false
     }
 

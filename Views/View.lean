@@ -56,7 +56,7 @@ where
           return t)
     withLocalDecls pmap fun ps => do
       let params := ps[:gen.numParams].toArray
-      let ω := params.back
+      let ω := params.back!
       forallTelescope (← inferType ω) fun indices _ => do
         let dest := Expr.forallE `h (mkAppN ω indices) (mkAppN genVal (params ++ indices)) .default
         let dest ← mkForallFVars indices dest

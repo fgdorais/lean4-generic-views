@@ -1,14 +1,15 @@
-{"version": "1.0.0",
+{"version": "1.1.0",
  "packagesDir": ".lake/packages",
  "packages":
  [{"url": "https://github.com/leanprover-community/batteries",
    "type": "git",
    "subDir": null,
-   "rev": "2506c85498141bc8ab3ee745bcb06021c3ed9a80",
+   "scope": "leanprover-community",
+   "rev": "f007bfe46ea8fb801ec907df9ab540054abcc5fd",
    "name": "batteries",
    "manifestFile": "lake-manifest.json",
    "inputRev": "main",
    "inherited": false,
-   "configFile": "lakefile.lean"}],
+   "configFile": "lakefile.toml"}],
  "name": "«lean4-views»",
  "lakeDir": ".lake"}

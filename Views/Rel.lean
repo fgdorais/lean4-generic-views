@@ -35,7 +35,7 @@ where
           let t := t.replaceFVars params[:es.size] es
           return t)
     withLocalDecls pmap fun params => do
-      let ω := params.back
+      let ω := params.back!
       let viewType ← Meta.mkAppM view.name params
       let imap1 ← indices.mapM fun p => do
         return ((← p.fvarId!.getUserName).appendIndexAfter 1, .implicit,
@@ -62,7 +62,7 @@ where
       let levels := ctor.levelParams.map mkLevelParam
       let params := ps[:ctor.numParams].toArray
       let fields := ps[ctor.numParams:].toArray
-      let ω := params.back
+      let ω := params.back!
       withLocalDeclD `a (mkAppN ω indices) fun a => do
         let ctorExpr := mkConst ctor.name levels
         let ctorExpr := mkAppN ctorExpr (params ++ fields)
